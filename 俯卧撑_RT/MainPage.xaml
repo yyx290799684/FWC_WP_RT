@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="俯卧撑_RT.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:俯卧撑_RT"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Black">
+
+    <Grid>
+        <Grid Name="MainClickGrid" Tapped="MainClickGrid_Tapped" Background="Black" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <TextBlock Name="MainClickTextBlock" Foreground="White" Text="0" FontSize="200" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        </Grid>
+        <TextBlock Name="TimeTextBlock" Text="01:00" Foreground="White" HorizontalAlignment="Center" Margin="0,15,0,0" FontSize="30"></TextBlock>
+        <StackPanel Name="SavingStackPanel" Visibility="Collapsed" VerticalAlignment="Center" Margin="5">
+            <TextBlock Text="正在保存" Foreground="White" HorizontalAlignment="Center"></TextBlock>
+            <ProgressBar IsIndeterminate="True"/>
+        </StackPanel>
+    
+    </Grid>
+    
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Name="startAppBarButton" Label="开始" Icon="Play" Click="startAppBarButton_Click"></AppBarButton>
+            <AppBarButton Name="stopAppBarButton" Label="停止" Icon="Stop" IsEnabled="False" Click="stopAppBarButton_Click"></AppBarButton>
+            <AppBarButton Name="CalendarAppBarButton" Label="历史" Icon="Calendar" Click="CalendarAppBarButton_Click"></AppBarButton>
+
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

@@ -1,0 +1,70 @@
+﻿<Page
+    x:Class="俯卧撑_RT.CalendarPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:俯卧撑_RT"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Black">
+    <Grid>
+        <StackPanel Name="CalendarStackPanel">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=" 1 *"/>
+                    <ColumnDefinition Width=" 1 *"/>
+                </Grid.ColumnDefinitions>
+                <Grid Name="highGrid" Grid.Column="0" Margin="20,10,5,5" Height="175" Background="#d98858">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                        <TextBlock Name="highTextBlock" Foreground="White"  FontSize="90" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock Margin="5" Text="最高成绩" Foreground="White" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom"></TextBlock>
+                </Grid>
+                <Grid Name="lowdateGrid" Grid.Column="1" Margin="5,10,20,5" Height="175" Background="#6bb15e">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                        <TextBlock Name="lowTextBlock" Foreground="White" FontSize="90" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <TextBlock Margin="5" Text="最低成绩" Foreground="White" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom"></TextBlock>
+                </Grid>
+            </Grid>
+
+            <Grid Name="sum_aveGrid" Margin="20,5,20,5" Height="175" Background="#e56767">
+                <Line Name="sum_aveLine" X1="1" X2="10" Y1="1" Y2="10" Stretch="Fill" StrokeThickness="2" Stroke="White"></Line>
+                <TextBlock Name="sumTextBlock" Foreground="White" VerticalAlignment="Bottom" Margin="5,15" FontSize="50"></TextBlock>
+                <TextBlock Text="总数" Foreground="White" VerticalAlignment="Bottom"  Margin="5" FontSize="15"></TextBlock>
+                <TextBlock Name="aveTextBlock" Foreground="White" HorizontalAlignment="Right" Margin="5,15" FontSize="50"></TextBlock>
+                <TextBlock Text="平均数" Foreground="White" HorizontalAlignment="Right"  Margin="5" FontSize="15"></TextBlock>
+            </Grid>
+
+            <Grid Name="statisticsGrid" VerticalAlignment="Top" Background="#4582bb" Margin="20,5,20,20" Height="175" >
+                <Grid Margin="10,10,10,30">
+                    <Canvas Margin="10,0" Name="statisticsViewCanvas" Grid.Row="0">
+                    </Canvas>
+                    <Grid Grid.Row="0" Margin="-5,0">
+                        <TextBlock Name="MaxLTextBlock" Foreground="White"></TextBlock>
+                        <TextBlock Name="MinLTextBlock" Foreground="White" VerticalAlignment="Bottom"></TextBlock>
+                    </Grid>
+                    <Image Margin="10,0,10,0" Source="Assets/图标_下界线.png" VerticalAlignment="Bottom"></Image>
+                </Grid>
+                <Grid>
+                    <TextBlock Name="statisticsTextBlock" Foreground="White" Margin="5" Text="近七次趋势图"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Bottom"></TextBlock>
+                </Grid>
+            </Grid>
+        </StackPanel>
+
+        <Grid Name="ProgressGrid" Background="Black" Opacity="0.5" Visibility="Collapsed">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="正在准备分享" HorizontalAlignment="Center" FontSize="16"></TextBlock>
+                <ProgressBar IsIndeterminate="True"></ProgressBar>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Name="shareAppBarButton" Label="分享" Icon="ReShare" Click="shareAppBarButton_Click"></AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
